@@ -66,5 +66,58 @@ public class Main {
     System.out.print("Enter career goal: ");
     String careerGoal = sc.nextLine();
 
+    int javaMarks;
+    int sqlMarks;
+    int webTechMarks;
+    int AptitudeMarks;
+    int commMarks;
+
+    do { 
+        System.out.print("Enter Java marks: ");
+        javaMarks = sc.nextInt();
+        if (javaMarks<0 || javaMarks>100){
+            System.out.println("Invalid marks. Enter a value between 0 and 100");
+        }
+    } while (javaMarks<0 || javaMarks>100);
+
+    do { 
+        System.out.print("Enter SQL marks: ");
+        sqlMarks = sc.nextInt();
+        if (sqlMarks<0 || sqlMarks>100){
+            System.out.println("Invalid marks. Enter a value between 0 and 100");
+        }
+    } while (sqlMarks<0 || sqlMarks>100);
+
+    do { 
+        System.out.print("Enter Web Technology marks: ");
+        webTechMarks = sc.nextInt();
+        if (webTechMarks<0 || webTechMarks>100){
+            System.out.println("Invalid marks. Enter a value between 0 and 100");
+        }
+    } while (webTechMarks<0 || webTechMarks>100);
+
+    do { 
+        System.out.print("Enter Aptitude marks: ");
+        AptitudeMarks = sc.nextInt();
+        if (AptitudeMarks<0 || AptitudeMarks>100){
+            System.out.println("Invalid marks. Enter a value between 0 and 100");
+        }
+    } while (AptitudeMarks<0 || AptitudeMarks>100);
+
+    do { 
+        System.out.print("Enter Communication marks: ");
+        commMarks = sc.nextInt();
+        if (commMarks<0 || commMarks>100){
+            System.out.println("Invalid marks. Enter a value between 0 and 100");
+        }
+    } while (commMarks<0 || commMarks>100);
+     
+    int totalMarks = javaMarks + sqlMarks + webTechMarks + AptitudeMarks + commMarks;
+    double percentage = (double) totalMarks/5;
+
+    System.out.println("Total Marks: "+totalMarks);
+    System.out.printf("Percentage: %.2f ",percentage);
+
+
  }
 }
