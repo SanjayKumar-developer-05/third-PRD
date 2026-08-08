@@ -117,7 +117,29 @@ public class Main {
 
     System.out.println("Total Marks: "+totalMarks);
     System.out.printf("Percentage: %.2f ",percentage);
+    System.out.println();
 
+    boolean academicCriteria = javaMarks>=35 && sqlMarks>=35 && webTechMarks>=35 && AptitudeMarks>=35 && commMarks>=35 && percentage>=40;
+
+    String grade;
+    if (percentage<40){
+        grade = "F";
+    }
+    else if(percentage>=40 && percentage<49.99){
+        grade="D";
+    }
+    else if (percentage>=50 && percentage<64.99){
+        grade="C";
+    }
+    else if(percentage>=65 && percentage<74.99){
+        grade="B";
+    }
+    else if(percentage>=75 && percentage<84.99){
+        grade="A";
+    }
+    else{
+        grade="A+";
+    }
 
  }
 }
