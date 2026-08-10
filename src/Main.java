@@ -141,5 +141,67 @@ public class Main {
         grade="A+";
     }
 
+    System.out.print("Enter total classes conducted: ");
+    int classesConducted = sc.nextInt();
+    sc.nextLine();
+
+    int classesAttended;
+    do {
+    System.out.print("Enter classes attended: ");
+    classesAttended = sc.nextInt();
+    if (classesConducted<classesAttended){
+        System.out.println("Invalid attendance. Attended classes cannot exceed "+classesConducted);
+    }
+    }while(classesConducted<classesAttended);
+
+    double attendancePercentage = ((double) classesAttended/classesConducted)*100;
+
+    String attendanceStatus = attendancePercentage >= 75 ? "REGULAR" : "SHORTAGE";
+
+    System.out.println("Attendance percentage: "+attendancePercentage+" %");
+    System.out.println("Attendance status: "+attendanceStatus);
+
+    System.out.print("How many assignment scores do you want to enter? ");
+    int numOfAssign = sc.nextInt();
+    sc.nextLine();
+
+    int asignScore; int validAssignScore=0; int totalAssignScore=0;
+
+    for(int i=1; i <= numOfAssign; i++){
+        System.out.print("Enter score for assignemnt " + i +" (0-10, -1 to finish): ");
+        asignScore = sc.nextInt();
+        if (asignScore < -1 || asignScore > 10){
+            System.out.println("Invalid score. Assignment " + i + " skipped");
+            continue;
+        }
+        else if (asignScore==-1){
+            System.out.println("Assignment entry completed early.");
+            break;
+        }
+        else{
+            System.out.println("Assignment score accepted.");
+            totalAssignScore+=asignScore;
+            validAssignScore++;
+        }
+    }
+
+    double assignAvg = (double) totalAssignScore / validAssignScore;
+    String assignStatus = (validAssignScore >= 1 && assignAvg >= 5)? "SATISFACTORY" : "NEEDS IMPROVEMENT";
+
+    int scholarshipDiscount = 0; 
+    if (grade != "F" && percentage >= 85 && attendancePercentage >= 85){
+        scholarshipDiscount = 10;
+    }
+    else if (grade != "F" && percentage >= 75 && attendancePercentage >= 75){
+        scholarshipDiscount = 5;
+    } else{
+        scholarshipDiscount = 0;
+    }
+
+    double scholarshipAmount = ((double) courseFee * scholarshipDiscount) / 100; 
+    double finalFee = courseFee - scholarshipAmount;
+
+    
+
  }
 }
