@@ -4,6 +4,8 @@ public class Main {
  public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
 
+    int anotherChoice;
+    do {
     System.out.println("==================================");
     System.out.println("        CAMPUSTRACK     ");
     System.out.println("==================================");
@@ -21,10 +23,10 @@ public class Main {
     do { 
         System.out.print("Enter age: ");
         age = sc.nextInt();
-        if (age<=15 || age>=30){
+        if (age<15 || age>=30){
         System.out.println("Invalid age. Enter a value between 15 and 35.");
     }
-    } while (age<=15 || age >=30);
+    } while (age<15 || age >=30);
 
     System.out.println("Age accepted.");
     sc.nextLine();
@@ -120,6 +122,13 @@ public class Main {
     System.out.println();
 
     boolean academicCriteria = javaMarks>=35 && sqlMarks>=35 && webTechMarks>=35 && AptitudeMarks>=35 && commMarks>=35 && percentage>=40;
+    String academicResult = "";
+
+    if(academicCriteria){
+        academicResult="PASSED";
+    } else{
+        academicResult="FAILED";
+    }
 
     String grade;
     if (percentage<40){
@@ -201,7 +210,136 @@ public class Main {
     double scholarshipAmount = ((double) courseFee * scholarshipDiscount) / 100; 
     double finalFee = courseFee - scholarshipAmount;
 
-    
+    int amountPaid =0;
+    do {
+        System.out.print("Enter Amounnt Paid (0-"+finalFee+"):");
+        amountPaid = sc.nextInt();
+        if(amountPaid < 0 || amountPaid > finalFee){
+            System.out.println("Invalid amount enter only range (0-"+finalFee+")");
+        }
+    } while (amountPaid < 0 || amountPaid > finalFee);
 
+    double feeBalance = finalFee - amountPaid;
+    String feeStatus = feeBalance == 0? "PAID" : "PENDING";
+    
+    String semClearance = (grade != "F" && percentage >= 40 && attendancePercentage >= 75 && assignStatus == "SATISFACTORY" && feeBalance == 0)? "CLEARED FOR NEXT SEMESTER" : "ACTION REQUIRED";
+
+    String recommendation = " ";
+    String applicableReason=" ";
+    if (semClearance == "ACTION REQUIRED"){
+        if (javaMarks < 35){
+            applicableReason = "Java marks are below 35";
+            recommendation = "Revisit the failed subject and complete additional practice";
+        }
+        else if (sqlMarks < 35){
+            applicableReason = "SQL marks are below 35";
+            recommendation = "Revisit the failed subject and complete additional practice";
+        }
+        else if (webTechMarks < 35){
+            applicableReason = "Web Technology marks are below 35";
+            recommendation = "Revisit the failed subject and complete additional practice";
+        }
+        else if (AptitudeMarks < 35){
+            applicableReason = "Aptitude marks are below 35";
+            recommendation = "Revisit the failed subject and complete additional practice";
+        }
+        else if (commMarks < 35){
+            applicableReason = "Communication marks are below 35";
+            recommendation = "Revisit the failed subject and complete additional practice";
+        }
+        else if (percentage < 40){
+            applicableReason = "Overall percentage is below 40%";
+            recommendation = "Improve overall academic performance";
+        }
+        else if (attendancePercentage < 75){
+            applicableReason = "Attendance is below 75%";
+            recommendation = "Attend classes regularly and clear the attendance shortage";
+        }
+        else if (assignAvg < 5){
+            applicableReason = "Assignment average is below 5.0";
+            recommendation = "Complete assignments & maintain an average of atleast 5.0";
+        }
+        else if(validAssignScore <= 0){
+            applicableReason = "No Valid assinment score was entered";
+            recommendation = "Complete assignments & maintain an average of atleast 5.0";
+        }
+        else{
+            applicableReason = "Semester fee is pending";
+            recommendation = "Pay the pending semester fee before clearance";
+        }
+    } else{
+        applicableReason = "NONE";
+        recommendation = "Maintain the current performance in the next semester";
+    }
+
+    System.out.println("========================================================");
+    System.out.println("STUDENT SEMESTER REPORT");
+    System.out.println("========================================================");
+
+    System.out.println("Student ID                 : "+id);
+    System.out.println("Student Name               : "+name);
+    System.out.println("Age                        : "+age);
+    System.out.println("Email                      : "+email);
+    System.out.println("Course                     : "+courseName);
+    System.out.println("Semester                   : "+sem);
+    System.out.println("Career Goal                : "+careerGoal);
+    System.out.println();
+
+    System.out.println("---------------- ACADEMIC SUMMARY --------------------");
+    System.out.println("Java Marks                 : "+javaMarks);
+    System.out.println("SQL Marks                  : "+sqlMarks);
+    System.out.println("Web Technology Marks       : "+webTechMarks);
+    System.out.println("Aptitude Marks             : "+AptitudeMarks);
+    System.out.println("Communication Marks        : "+commMarks);
+    System.out.println("Total Marks                : "+totalMarks);
+    System.out.println("Percentage                 : "+percentage);
+    System.out.println("Academic Result            : "+academicResult);
+    System.out.println("Grade                      : "+grade);
+    System.out.println();
+
+    System.out.println("---------------- ATTENDANCE SUMMARY ------------------");
+    System.out.println("Classes Conducted          : "+classesConducted);
+    System.out.println("Classes Attended           : "+classesAttended);
+    System.out.println("Attendance Percentage      : "+attendancePercentage);
+    System.out.println("Attendance Status          : "+attendanceStatus);
+    System.out.println();
+
+    System.out.println("---------------- ASSIGNMENT SUMMARY ------------------");
+    System.out.println("Valid Assignments          : "+validAssignScore);
+    System.out.println("Assignment Total           : "+totalAssignScore);
+    System.out.println("Assignment Average         : "+assignAvg);
+    System.out.println("Assignment Status          : "+assignStatus);
+    System.out.println();
+
+    System.out.println("---------------- FEE SUMMARY -------------------------");
+    System.out.println("Base Semester Fee          : Rs. "+courseFee);
+    System.out.println("Scholarship Percentage     : "+scholarshipDiscount+" %");
+    System.out.println("Scholarship Amount         : Rs. "+scholarshipAmount);
+    System.out.println("Final Payable Fee          : Rs. "+finalFee);
+    System.out.println("Amount Paid                : Rs. "+amountPaid);
+    System.out.println("Fee Balance                : Rs. "+feeBalance);
+    System.out.println("Fee Status                 : "+feeStatus);
+    System.out.println();
+
+    System.out.println("---------------- FINAL STATUS ------------------------");
+    System.out.println("Semester Clearance         : "+semClearance);
+    System.out.println();
+
+    System.out.println("---------------- FAILED CONDITIONS -------------------");
+    System.out.println(applicableReason);
+    System.out.println();
+
+    System.out.println("---------------- RECOMMENDATIONS ---------------------");
+    System.out.println(recommendation);
+
+
+    System.out.println("Do you want to process another?");
+    System.out.println("1. Yes");
+    System.out.println("0. No");
+    System.out.print("Enter choice: ");
+    anotherChoice = sc.nextInt();
+    sc.nextLine();
+
+   } while(anotherChoice==1);
  }
 }
