@@ -1,0 +1,53 @@
+========================================================
+            STUDENT SEMESTER REPORT
+========================================================
+Student ID                 : STU101
+Student Name               : Ananya Rao
+Age                        : 20
+Email                      : ananya@gmail.com
+Course                     : B.E/B.Tech
+Semester                   : 4
+Career Goal                : become a Java backend developer
+
+---------------- ACADEMIC SUMMARY --------------------
+Java Marks                 : 90
+SQL Marks                  : 90
+Web Technology Marks       : 90
+Aptitude Marks             : 30
+Communication Marks        : 90
+Total Marks                : 390
+Percentage                 : 78.0%
+Academic Result            : FAILED
+Grade                      : A
+
+---------------- ATTENDANCE SUMMARY ------------------
+Classes Conducted          : 120
+Classes Attended           : 102
+Attendance Percentage      : 85.0%
+Attendance Status          : REGULAR
+
+---------------- ASSIGNMENT SUMMARY ------------------
+Valid Assignments          : 5
+Assignment Total           : 41
+Assignment Average         : 8.2
+Assignment Status          : SATISFACTORY
+
+---------------- FEE SUMMARY -------------------------
+Base Semester Fee          : Rs.50000
+Scholarship Percentage     : 5%
+Scholarship Amount         : Rs.2500.0
+Final Payable Fee          : Rs.47500.0
+Amount Paid                : Rs.47500
+Fee Balance                : Rs.0.0
+Fee Status                 : PAID
+
+---------------- FINAL STATUS ------------------------
+Semester Clearance         : ACTION REQUIRED
+
+---------------- FAILED CONDITIONS -------------------
+Aptitude marks are below 35
+
+---------------- RECOMMENDATIONS ---------------------
+Revisit the failed subject and complete additional practice
+========================================================
+========================================================
