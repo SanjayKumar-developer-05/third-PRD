@@ -222,7 +222,7 @@ public class Main {
     double feeBalance = finalFee - amountPaid;
     String feeStatus = feeBalance == 0? "PAID" : "PENDING";
     
-    String semClearance = (grade != "F" && percentage >= 40 && attendancePercentage >= 75 && assignStatus == "SATISFACTORY" && feeBalance == 0)? "CLEARED FOR NEXT SEMESTER" : "ACTION REQUIRED";
+    String semClearance = (academicResult == "PASSED" && percentage >= 40 && attendancePercentage >= 75 && assignStatus == "SATISFACTORY" && feeBalance == 0)? "CLEARED FOR NEXT SEMESTER" : "ACTION REQUIRED";
 
     String recommendation = " ";
     String applicableReason=" ";
