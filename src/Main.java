@@ -273,7 +273,7 @@ public class Main {
     }
 
     System.out.println("========================================================");
-    System.out.println("STUDENT SEMESTER REPORT");
+    System.out.println("            STUDENT SEMESTER REPORT");
     System.out.println("========================================================");
 
     System.out.println("Student ID                 : "+id);
@@ -292,7 +292,7 @@ public class Main {
     System.out.println("Aptitude Marks             : "+AptitudeMarks);
     System.out.println("Communication Marks        : "+commMarks);
     System.out.println("Total Marks                : "+totalMarks);
-    System.out.println("Percentage                 : "+percentage);
+    System.out.println("Percentage                 : "+percentage+"%");
     System.out.println("Academic Result            : "+academicResult);
     System.out.println("Grade                      : "+grade);
     System.out.println();
@@ -300,7 +300,7 @@ public class Main {
     System.out.println("---------------- ATTENDANCE SUMMARY ------------------");
     System.out.println("Classes Conducted          : "+classesConducted);
     System.out.println("Classes Attended           : "+classesAttended);
-    System.out.println("Attendance Percentage      : "+attendancePercentage);
+    System.out.println("Attendance Percentage      : "+attendancePercentage+"%");
     System.out.println("Attendance Status          : "+attendanceStatus);
     System.out.println();
 
@@ -312,12 +312,12 @@ public class Main {
     System.out.println();
 
     System.out.println("---------------- FEE SUMMARY -------------------------");
-    System.out.println("Base Semester Fee          : Rs. "+courseFee);
-    System.out.println("Scholarship Percentage     : "+scholarshipDiscount+" %");
-    System.out.println("Scholarship Amount         : Rs. "+scholarshipAmount);
-    System.out.println("Final Payable Fee          : Rs. "+finalFee);
-    System.out.println("Amount Paid                : Rs. "+amountPaid);
-    System.out.println("Fee Balance                : Rs. "+feeBalance);
+    System.out.println("Base Semester Fee          : Rs."+courseFee);
+    System.out.println("Scholarship Percentage     : "+scholarshipDiscount+"%");
+    System.out.println("Scholarship Amount         : Rs."+scholarshipAmount);
+    System.out.println("Final Payable Fee          : Rs."+finalFee);
+    System.out.println("Amount Paid                : Rs."+amountPaid);
+    System.out.println("Fee Balance                : Rs."+feeBalance);
     System.out.println("Fee Status                 : "+feeStatus);
     System.out.println();
 
@@ -331,6 +331,8 @@ public class Main {
 
     System.out.println("---------------- RECOMMENDATIONS ---------------------");
     System.out.println(recommendation);
+    System.out.println("========================================================");
+    System.out.println();
 
 
     System.out.println("Do you want to process another?");
