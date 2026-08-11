@@ -1,0 +1,350 @@
+START
+
+Create an input system to read values from the user.
+
+REPEAT the following steps:
+
+    Display the CampusTrack title
+    Display "Student Academic Management System"
+
+    Ask the user to enter Student ID
+    Store the Student ID
+
+    Ask the user to enter the student's full name
+    Store the full name
+
+    Ask the user to enter age
+
+    REPEAT until the age is valid:
+        If age is less than 15 OR age is 30 or more:
+            Display "Invalid age"
+            Ask for age again
+
+    Display "Age accepted"
+
+    Ask the user to enter email
+    Store the email
+
+    Display the available courses:
+        1. BCA
+        2. B.Sc Computer Science
+        3. B.E/B.Tech
+        4. MCA
+        5. Other
+
+    Ask the user to select a course
+
+    REPEAT until the course choice is between 1 and 5:
+        If the choice is invalid:
+            Display "Invalid course choice"
+            Ask for the choice again
+
+    Based on the selected course:
+        If choice is 1:
+            Course is BCA
+            Fee is 35000
+
+        If choice is 2:
+            Course is B.Sc Computer Science
+            Fee is 30000
+
+        If choice is 3:
+            Course is B.E/B.Tech
+            Fee is 50000
+
+        If choice is 4:
+            Course is MCA
+            Fee is 45000
+
+        Otherwise:
+            Course is Other
+            Fee is 25000
+
+    Ask for semester
+    Store semester
+
+    Ask for career goal
+    Store career goal
+
+    Ask for Java marks
+
+    REPEAT until Java marks are between 0 and 100:
+        If marks are invalid:
+            Display an error message
+            Ask again
+
+    Ask for SQL marks
+
+    REPEAT until SQL marks are between 0 and 100:
+        If marks are invalid:
+            Display an error message
+            Ask again
+
+    Ask for Web Technology marks
+
+    REPEAT until marks are between 0 and 100:
+        If marks are invalid:
+            Display an error message
+            Ask again
+
+    Ask for Aptitude marks
+
+    REPEAT until marks are between 0 and 100:
+        If marks are invalid:
+            Display an error message
+            Ask again
+
+    Ask for Communication marks
+
+    REPEAT until marks are between 0 and 100:
+        If marks are invalid:
+            Display an error message
+            Ask again
+
+    Calculate total marks by adding all five subject marks.
+
+    Calculate percentage by dividing total marks by 500 and multiply by 100.
+
+    Display total marks and percentage.
+
+    Check whether:
+        Java marks are at least 35
+        AND SQL marks are at least 35
+        AND Web Technology marks are at least 35
+        AND Aptitude marks are at least 35
+        AND Communication marks are at least 35
+        AND overall percentage is at least 40
+
+    If all conditions are true:
+        Academic result is PASSED
+    Otherwise:
+        Academic result is FAILED
+
+    If percentage is below 40:
+        Grade is F
+
+    Otherwise if percentage is below 50:
+        Grade is D
+
+    Otherwise if percentage is below 65:
+        Grade is C
+
+    Otherwise if percentage is below 75:
+        Grade is B
+
+    Otherwise if percentage is below 85:
+        Grade is A
+
+    Otherwise:
+        Grade is A+
+
+    Ask for total number of classes conducted.
+
+    Ask for number of classes attended.
+
+    REPEAT until attended classes are not greater than conducted classes:
+        If attended classes are greater than conducted classes:
+            Display an error message
+            Ask again
+
+    Calculate attendance percentage:
+
+        Attendance percentage =
+        classes attended / classes conducted × 100
+
+    If attendance percentage is at least 75:
+        Attendance status is REGULAR
+    Otherwise:
+        Attendance status is SHORTAGE
+
+    Ask how many assignment scores the user wants to enter.
+
+    Set:
+        valid assignment count = 0
+        total assignment score = 0
+
+    Repeat for each assignment:
+
+        Ask for assignment score from 0 to 10.
+        Allow -1 to finish early.
+
+        If score is less than -1 OR greater than 10:
+            Display invalid score
+            Skip this assignment
+
+        Otherwise if score is -1:
+            Display that assignment entry is finished
+            Stop entering assignments
+
+        Otherwise:
+            Accept the assignment score
+            Add score to total assignment score
+            Increase valid assignment count by 1
+
+
+    Calculate assignment average.
+
+    If there is at least one valid assignment
+    AND assignment average is at least 5:
+        Assignment status is SATISFACTORY
+    Otherwise:
+        Assignment status is NEEDS IMPROVEMENT
+
+    If the student is not failed
+    AND percentage is at least 85
+    AND attendance is at least 85:
+
+        Give 10% scholarship
+
+    Otherwise if the student is not failed
+    AND percentage is at least 75
+    AND attendance is at least 75:
+
+        Give 5% scholarship
+
+    Otherwise:
+
+        Give 0% scholarship
+
+    Calculate scholarship amount.
+
+    Calculate final payable fee:
+
+    Final fee = Course fee - Scholarship amount
+
+    Ask how much money the student has paid.
+
+    REPEAT until payment is between 0 and final fee:
+
+        If payment is invalid:
+            Display an error message
+            Ask again
+
+    Calculate remaining fee balance.
+
+    If fee balance is zero:
+        Fee status is PAID
+    Otherwise:
+        Fee status is PENDING
+
+    Check whether all of these conditions are satisfied:
+
+        Academic result is PASSED
+        AND percentage is at least 40
+        AND attendance is at least 75
+        AND assignment status is SATISFACTORY
+        AND fee balance is zero
+
+    If all conditions are satisfied:
+        Semester clearance is
+        "CLEARED FOR NEXT SEMESTER"
+
+    Otherwise:
+        Semester clearance is
+        "ACTION REQUIRED"
+
+    If semester clearance requires action:
+
+        If Java marks are below 35:
+            Reason = Java marks are below 35
+            Recommendation = Practice the failed subject
+
+        Otherwise if SQL marks are below 35:
+            Reason = SQL marks are below 35
+            Recommendation = Practice the failed subject
+
+        Otherwise if Web Technology marks are below 35:
+            Reason = Web Technology marks are below 35
+            Recommendation = Practice the failed subject
+
+        Otherwise if Aptitude marks are below 35:
+            Reason = Aptitude marks are below 35
+            Recommendation = Practice the failed subject
+
+        Otherwise if Communication marks are below 35:
+            Reason = Communication marks are below 35
+            Recommendation = Practice the failed subject
+
+        Otherwise if percentage is below 40:
+            Reason = Overall percentage is below 40%
+            Recommendation = Improve academic performance
+
+        Otherwise if attendance is below 75:
+            Reason = Attendance is below 75%
+            Recommendation = Attend classes regularly
+
+        Otherwise if assignment average is below 5:
+            Reason = Assignment average is below 5
+            Recommendation = Complete assignments properly
+
+        Otherwise if there are no valid assignments:
+            Reason = No valid assignment score was entered
+            Recommendation = Complete assignments
+
+        Otherwise:
+            Reason = Semester fee is pending
+            Recommendation = Pay the pending fee
+
+    Otherwise:
+
+        Reason = NONE
+        Recommendation = Maintain current performance
+
+
+    ---------- DISPLAY REPORT ----------
+
+    Display student details:
+        Student ID
+        Student name
+        Age
+        Email
+        Course
+        Semester
+        Career goal
+
+    Display academic details:
+        Marks for all subjects
+        Total marks
+        Percentage
+        Academic result
+        Grade
+
+    Display attendance details:
+        Classes conducted
+        Classes attended
+        Attendance percentage
+        Attendance status
+
+    Display assignment details:
+        Number of valid assignments
+        Assignment total
+        Assignment average
+        Assignment status
+
+    Display fee details:
+        Course fee
+        Scholarship percentage
+        Scholarship amount
+        Final payable fee
+        Amount paid
+        Remaining balance
+        Fee status
+
+    Display final semester clearance.
+
+    Display failed condition/reason.
+
+    Display recommendation.
+
+    Ask:
+        "Do you want to process another?"
+
+    If user enters 1:
+        Start the process again.
+
+    If user enters 0:
+        Stop the program.
+
+UNTIL user chooses 0
+
+END
